@@ -36,6 +36,10 @@ export const PresaleModal = () => {
     ) => {
         setSelectedLockTime(value);
     };
+
+    const handlePurchase = () => {
+        
+    }
     <Badge
         variant="accent"
         className="absolute rounded-full right-2 px-1 flex items-center gap-2"
@@ -75,7 +79,7 @@ export const PresaleModal = () => {
                         isOpen && (
                             <div className={`bg-purple-200 rounded px-2 mt-1 cursor-pointer`}>
                                 {availableCoins.map((item, index) => (
-                                    <div className="flex flex-row items-center" onClick={e => handleItemClick(e.target.id)} id={item} key={index}>
+                                    <div className="flex flex-row items-center" onClick={e => handleItemClick(item)} id={item} key={index}>
                                         <Image
                                             src={`/icons/coins/${item.toLowerCase()}.png`}
                                             alt={selectedItem}
@@ -260,7 +264,7 @@ export const PresaleModal = () => {
                 <p className="text-primary w-full">Total Bonus Received : xx%</p>
             </div>
             <div className="mt-4 justify-center">
-                <Button>Purchase</Button>
+                <Button onClick={handlePurchase}>Purchase</Button>
             </div>
         </div>
     )
